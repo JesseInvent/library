@@ -22,9 +22,10 @@ class AuthorManagementTest extends TestCase
         ]);
         
         $author = Author::all();
-
+        
         $this->assertCount(1, $author);
         $this->assertInstanceOf(Carbon::class, $author->first()->dob);
+
     }
     
 }

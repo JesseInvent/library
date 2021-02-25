@@ -27,18 +27,19 @@ class BooksController extends Controller
         return redirect($book->path());
     }
 
-    protected function validateRequest()
-    {
-        return request()->validate([
-            'title' => 'required',
-            'author' => 'required'
-        ]);
-    }
-
     protected function destroy (Book $book)
     {
         $book->delete();
         
         return redirect('/books');
     }
+
+    protected function validateRequest()
+    {
+        return request()->validate([
+            'title' => 'required',
+            'author_id' => 'required'
+        ]);
+    }
 }
+

@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Author extends Model
 {
@@ -16,4 +16,6 @@ class Author extends Model
     public function setDobAttribute($dob) {
         $this->attributes['dob'] = Carbon::parse($dob);
     }
+
+  
 }
