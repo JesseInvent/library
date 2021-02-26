@@ -17,11 +17,10 @@ class BookCheckoutTest extends TestCase
     public function test_a_book_can_be_checked_out_by_a_signed_in_user ()
     {
         // $this->withoutExceptionHandling();
-
+        
         $book = Book::factory()->create();
         $this->actingAs($user = User::factory()->create())
             ->post("/checkout/{$book->id}");
-
 
         $this->assertCount(1, Reservation::all());
         $this->assertEquals($user->id, Reservation::first()->user_id);

@@ -17,6 +17,7 @@ class BookTest extends TestCase
      */
     public function test_an_author_id_is_recorded()
     {
+        
         Book::create([
             'title' => 'Cool title',
             'author_id' => 1,
